@@ -49,7 +49,7 @@ router.post('/comments', (req, res) => {
     comment.text = text;
     comment.save(err => {
         if(err) return res.json({ success: false, error: err});
-        return res.json({ success: true });
+        return res.json({ success: true, message: "Your comment is successfully added" });
     });
 });
 

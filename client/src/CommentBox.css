@@ -7,8 +7,16 @@
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
 
+}
+
+h1{
+    text-align: left;
+    width: 75%;
+    max-width: 700px;
+    min-width: 300px;
+    margin-bottom: 0;
 }
 
 .comments {
@@ -28,14 +36,10 @@
     display: flex;
 }
 
-.singleComment:nth-child(2n){
-    flex-direction: row-reverse;
-}
-
 .singleCommentContent {
     min-width: 100px;
     background-color: LightCyan;
-    border-radius: 25px;
+    border-radius: 5px;
     padding: 10px;
     display: inline-flex;
 }
@@ -83,6 +87,7 @@
     width: 70%;
     min-width: 300px;
     max-width: 700px;
+    justify-self: flex-end;
 }
 
 .form form {

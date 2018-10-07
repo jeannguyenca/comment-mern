@@ -8,7 +8,9 @@ const CommentList = (props) => {
             author={comment.author}
             key={comment._id}
             id={comment._id}
-            timestamp={comment.updatedAt}>
+            timestamp={comment.updatedAt}
+            handleDeleteComment={props.handleDeleteComment}
+            handleUpdateComment={props.handleUpdateComment}>
             {comment.text}
         </Comment>
     ));
@@ -29,6 +31,8 @@ CommentList.propTypes = {
         id: PropTypes.string,
         text: PropTypes.string,
     })),
+    handleDeleteComment: PropTypes.func.isRequired,
+    handleUpdateComment: PropTypes.func.isRequired
 };
 
 CommentList.defaultProps = {

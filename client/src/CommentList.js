@@ -3,40 +3,38 @@ import PropTypes from 'prop-types';
 import Comment from './Comment';
 
 const CommentList = (props) => {
-    const commentNodes = props.data.map(comment => (
-        <Comment
-            author={comment.author}
-            key={comment._id}
-            id={comment._id}
-            timestamp={comment.updatedAt}
-            handleDeleteComment={props.handleDeleteComment}
-            handleUpdateComment={props.handleUpdateComment}>
-            {comment.text}
-        </Comment>
-    ));
-
-    return (
-        <div>
-            {commentNodes}
-        </div>
-    );
+  const commentNodes = props.data.map(comment => (
+    <Comment
+      author={comment.author}
+      key={comment._id}
+      id={comment._id}
+      timestamp={comment.updatedAt}
+      handleUpdateComment={props.handleUpdateComment}
+      handleDeleteComment={props.handleDeleteComment}
+    >
+      { comment.text}
+    </Comment>
+  ));
+  return (
+    <div>
+      { commentNodes }
+    </div>
+  );
 };
 
-//Using propTypes to validate data
 CommentList.propTypes = {
-    // An array of a certain type
-    // Combine with an object taking on a particular shape
-    data: PropTypes.arrayOf(PropTypes.shape({
-        author: PropTypes.string,
-        id: PropTypes.string,
-        text: PropTypes.string,
-    })),
-    handleDeleteComment: PropTypes.func.isRequired,
-    handleUpdateComment: PropTypes.func.isRequired
+  data: PropTypes.arrayOf(PropTypes.shape({
+    author: PropTypes.string,
+    id: PropTypes.string,
+    text: PropTypes.string,
+    updatedAt: PropTypes.string,
+  })),
+  handleDeleteComment: PropTypes.func.isRequired,
+  handleUpdateComment: PropTypes.func.isRequired,
 };
 
 CommentList.defaultProps = {
-    data: [],
+  data: [],
 };
 
 export default CommentList;

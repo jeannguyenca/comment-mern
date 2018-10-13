@@ -24,19 +24,18 @@ class CommentBox extends Component {
         }
     }
 
-    componentWillUnmount() {
+    componentWillUnmountt() {
         if(this.pollInterval) clearInterval(this.pollInterval);
         this.pollInterval = null;
     }
 
     loadCommentsFromServer = () => {
-        //fetch returns a promise.
-        fetch('/api/comments')
-            .then(data => data.json())
-            .then((res) => {
-                if(!res.success) this.setState({error: res.error});
-                else this.setState({data: res.data});
-            });
+      fetch('/api/comments/')
+        .then(data => data.json())
+        .then((res) => {
+          if (!res.success) this.setState({ error: res.error });
+          else this.setState({ data: res.data });
+        });
     }
 
     onChangeText = (e) => {
@@ -141,8 +140,11 @@ class CommentBox extends Component {
                         handleChangeText={this.onChangeText}
                         submitComment={this.submitComment}
                     />
+                    <CommentList data={this.state.data} />
                 </div>
-                {this.state.error && <p>{this.state.error}</p>}
+                <div className="form">
+                    <CommentForm />
+                </div>
             </div>
         );
     }

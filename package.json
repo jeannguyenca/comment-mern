@@ -8,7 +8,8 @@
         "start:server": "cd backend && nodemon server.js --exec babel-node --presets es2015,stage-0",
         "start:client": "cd client && npm start",
         "start:dev": "concurrently \"npm run start:server\" \"npm run start:client\"",
-        "heroku-postbuild": "concurrently \"export DB_URI=mongodb://jeannguyen:huonggiang252326@ds119273.mlab.com:19273/comment-mern\" \"npm run start:server\" \"npm run start:client\"",
+        "client-build":"cd client && npm install && npm run build",
+        "heroku-postbuild": "concurrently \"export DB_URI=mongodb://jeannguyen:huonggiang252326@ds119273.mlab.com:19273/comment-mern\" \"npm run start:server\" \"npm run client-build\""
     },
     "repository": {
         "type": "git",

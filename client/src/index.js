@@ -5,4 +5,4 @@ import CommentBox from './CommentBox';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(<CommentBox />, document.getElementById('root'));
-registerServiceWorker();
+// registerServiceWorker();

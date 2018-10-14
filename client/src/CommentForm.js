@@ -25,7 +25,7 @@ CommentForm.propTypes = {
     submitComment: PropTypes.func.isRequired,
     handleChangeText: PropTypes.func.isRequired,
     text: PropTypes.string,
-    author: PropTypes.srting,
+    author: PropTypes.string,
 };
 
 CommentForm.defaultProps = {

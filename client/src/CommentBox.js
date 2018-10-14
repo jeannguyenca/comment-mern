@@ -140,10 +140,6 @@ class CommentBox extends Component {
                         handleChangeText={this.onChangeText}
                         submitComment={this.submitComment}
                     />
-                    <CommentList data={this.state.data} />
-                </div>
-                <div className="form">
-                    <CommentForm />
                 </div>
             </div>
         );

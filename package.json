@@ -10,7 +10,7 @@
         "start:dev": "concurrently \"npm run start:server\" \"npm run start:client\"",
         "client-build":"cd client && npm install && npm run build && npm start",
         "heroku-postbuild": "concurrently \"npm run start:server\" \"npm run client-build\"",
-        "start": "node server/server.js",
+        "start": "node backend/server.js",
     },
     "repository": {
         "type": "git",
